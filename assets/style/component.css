@@ -1,0 +1,61 @@
+/* este css contem informacoes dos componentes utilizado em toda a pagina comum, como botoes e etc */
+
+
+/* botao de compra */
+.buy-button {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+/* component produtos */
+.products-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-discount {
+    font-size: 12px;
+    color: #777;
+    text-decoration: line-through;
+}
+
+.product-offer {
+    font-size: 12px;
+    color: green;
+    margin: 5px 0;
+}

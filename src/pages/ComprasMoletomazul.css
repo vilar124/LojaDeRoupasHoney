@@ -1,10 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Styles */
+@import url('./assets/style/reset.css');
+
+/* Navbar */
+.topnav {
+    overflow: hidden;
+    background-color: #000000;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
 }
 
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a:last-child {
+    float: right;
+}
+
+/* Product Container */
 .product-container {
     display: flex;
     max-width: 1200px;
@@ -14,6 +37,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Product Images Section */
 .product-images {
     flex: 1;
     margin-right: 20px;
@@ -38,6 +62,7 @@ body {
     padding: 5px;
 }
 
+/* Product Details Section */
 .product-details {
     flex: 1;
 }
@@ -51,6 +76,7 @@ body {
     margin: 5px 0;
 }
 
+/* Ratings Section */
 .ratings {
     margin: 10px 0;
 }
@@ -60,6 +86,7 @@ body {
     color: #ffcc00;
 }
 
+/* Price Section */
 .price {
     margin: 15px 0;
 }
@@ -81,6 +108,7 @@ body {
     font-weight: bold;
 }
 
+/* Promotional Section */
 .promo {
     background-color: #f0f0f0;
     padding: 10px;
@@ -88,6 +116,7 @@ body {
     margin: 10px 0;
 }
 
+/* Sizes Section */
 .sizes {
     margin: 20px 0;
 }
@@ -104,6 +133,7 @@ body {
     background-color: #ddd;
 }
 
+/* Add to Cart Button */
 .add-to-cart {
     background-color: #000;
     color: #fff;
@@ -117,28 +147,26 @@ body {
     background-color: #333;
 }
 
-  /* Navbar */
-  .topnav {
-    overflow: hidden;
-    background-color: #000000;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .topnav a:last-child {
-    float: right;
-  }
+/* Hoodie Container */
+.hoodie-container {
+    display: flex;
+    gap: 20px;
+}
+
+.hoodie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hoodie img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

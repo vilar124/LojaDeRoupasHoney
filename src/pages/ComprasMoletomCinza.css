@@ -1,9 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
+@import url('./assets/style/reset.css');
 
 .product-container {
     display: flex;
@@ -117,28 +112,4 @@ body {
     background-color: #333;
 }
 
-  /* Navbar */
-  .topnav {
-    overflow: hidden;
-    background-color: #000000;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .topnav a:last-child {
-    float: right;
-  }
+@import url(./assets/style/navbar.css)

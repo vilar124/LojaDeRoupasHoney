@@ -1,0 +1,96 @@
+/* Estilos do rodapé */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+    flex-basis: 20%;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/*Segundo footer */
+.footer-section2 {
+    margin: 10px;
+    flex-basis: 30%;
+}
+
+.footer-section2 h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section2 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section2 ul li {
+    margin: 5px 0;
+}
+
+.footer-section2 ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section2 ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos de redes sociais e formas de pagamento */
+.social-media img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.payment-methods img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}

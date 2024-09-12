@@ -1,0 +1,48 @@
+@import url(reset.css);
+@import url(header.css);
+@import url(footer.css);
+@import url(component.css);
+
+/* Imagem principal */
+header img.img1 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* Estilos para a seção de produtos */
+.products-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.navigation-arrows {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+
+    .footer-section,
+    .footer-section2 {
+        flex-basis: 100%;
+        text-align: left;
+    }
+
+    header img.img1 {
+        width: 100%;
+    }
+}
