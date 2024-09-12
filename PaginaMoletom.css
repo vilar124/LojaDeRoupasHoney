@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.buy-button {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.logo-bar {
+    text-align: center;
+    margin: 0;
+}
+
+.logo-bar img {
+    width: 100%;
+    height: auto;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a:last-child {
+    float: right;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.filter-section {
+    width: 20%;
+    float: left;
+}
+
+.filter-section h3 {
+    margin-top: 0;
+}
+
+.colors, .sizes, .prices, .modelos {
+    margin-bottom: 20px;
+}
+
+.products-section {
+    width: 75%;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-card {
+    width: 28%;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 80%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.price {
+    color: green;
+    font-size: 16px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.rating {
+    margin: 10px 0;
+}
+
+.color-btn, .size-btn {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.size-btn {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 5px;
+}
+
+.color-btn.active, .size-btn.active {
+    border-color: blue;
+    background-color: #e0e0ff;
+}
+
+.color-btn:hover, .size-btn:hover {
+    border-color: black;
+}

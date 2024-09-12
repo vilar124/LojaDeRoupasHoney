@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Cart</title>
+    <link rel="stylesheet" href="PaginaComprarMoletom.css">
+</head>
+<body>
+
+    <!-- Barra do logotipo -->
+    <div class="logo-bar">
+        <a href="PaginaPrincipal.html">
+            <img src="./Imagens/background2.png" alt="Logotipo Loja Honey">
+        </a>
+    </div>
+
+    <div class="topnav">  
+        <a href="PaginaMoletom.html">Moletom</a>
+        <a href="PaginaAcessorios.html">Acessórios</a>
+        <a href="PaginaCamisa.html">Camisas</a>
+        <a href="#" style="float:right">Contatos</a>
+    </div>
+
+    <main>
+        <div class="progress-bar">
+            <div class="step completed">Carrinho</div>
+            <div class="step">Identificação</div>
+            <div class="step">Pagamento</div>
+        </div>
+
+        <section class="cart">
+            <h2>Carrinho</h2>
+            <div class="cart-item">
+                <img src="Imagens/moletom.png" alt="Jaqueta Nike Dri-FIT" class="item-image">
+                <div class="item-details">
+                    <h3>Jaqueta Nike Dri-FIT Epic Knit Masculina</h3>
+                    <p>Cor: Preto</p>
+                    <p>Tamanho: M</p>
+                </div>
+                <div class="item-quantity">
+                    <!-- Seletor de quantidade integrado -->
+                    <button class="quantity-btn" id="decrease">-</button>
+                    <input type="text" id="quantity" value="1" readonly style="text-align: center; width: 30px;"/>
+                    <button class="quantity-btn" id="increase">+</button>
+                </div>
+                <div class="item-price">
+                    <p class="old-price">R$ 399,99</p>
+                    <p class="new-price" id="price">R$ 369,99</p>
+                    <p class="pix-discount">5% off no Pix</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="delivery-discount">
+            <div class="delivery-time">
+                <label for="cep">Prazo de entrega</label>
+                <input type="text" id="cep" placeholder="00000-000">
+                <button id="calculate-shipping">Calcular</button>
+                <a href="https://buscacepinter.correios.com.br/app/endereco/index.php">Não sei meu CEP</a>
+                <p id="shipping-result"></p> <!-- Resultado do prazo de entrega -->
+            </div>
+
+            <div class="discount-code">
+                <label for="discount">Cupom de desconto</label>
+                <input type="text" id="discount-code" placeholder="Digite o código">
+                <button id="apply-discount">Aplicar</button>
+                <p class="message" id="discount-message"></p>
+            </div>
+        </section>
+
+        <section class="summary">
+            <h2>Resumo</h2>
+            <p>Valor dos produtos: <span>R$ 399,99</span></p>
+            <p>Frete: <span>A calcular</span></p>
+            <p>Descontos: <span id="discount-value">- R$ 30,00</span></p>
+            <h3>Total da compra: <span id="discounted-price">R$ 369,99</span></h3>
+            <form action="" method="GET">
+                <button class="continue-btn" type="submit">Continuar</button>
+            </form>            
+        </section>
+    </main>
+
+    <script>
+        const decreaseButton = document.getElementById('decrease');
+        const increaseButton = document.getElementById('increase');
+        const quantityInput = document.getElementById('quantity');
+        const priceDisplay = document.getElementById('price');
+        const originalPrice = 369.99; // Valor original do produto
+        const discountPercentage = 0.05; // 5% de desconto para pagamento com Pix
+
+        function updatePrice() {
+            const quantity = parseInt(quantityInput.value);
+            const discountedPrice = originalPrice * (1 - discountPercentage);
+            const totalPrice = discountedPrice * quantity;
+            priceDisplay.textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
+        }
+
+        decreaseButton.addEventListener('click', () => {
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantity -= 1;
+                quantityInput.value = quantity;
+                updatePrice();
+            }
+        });
+
+        increaseButton.addEventListener('click', () => {
+            let quantity = parseInt(quantityInput.value);
+            quantity += 1;
+            quantityInput.value = quantity;
+            updatePrice();
+        });
+
+        updatePrice();
+
+        // Função para aplicar o desconto
+        document.getElementById('apply-discount').addEventListener('click', function() {
+            var discountCode = document.getElementById('discount-code').value;
+            var discountMessage = document.getElementById('discount-message');
+            var discountedPriceField = document.getElementById('discounted-price');
+
+            // Verificar se o código de desconto é válido
+            if (discountCode === "HONEYCOMPRA") {
+                var discountedPrice = originalPrice * 0.9; // 10% de desconto
+                discountedPriceField.textContent = "R$ " + discountedPrice.toFixed(2); // Atualizar o preço com desconto
+                discountMessage.textContent = "Desconto aplicado com sucesso!";
+                discountMessage.style.color = "green";
+            } else {
+                discountMessage.textContent = "Código de desconto inválido.";
+                discountMessage.style.color = "red";
+                discountedPriceField.textContent = "R$ " + originalPrice.toFixed(2); // Voltar ao preço original
+            }
+        });
+
+        // Função para calcular o prazo de entrega
+        document.getElementById('calculate-shipping').addEventListener('click', function() {
+            var cep = document.getElementById('cep').value;
+            var shippingResult = document.getElementById('shipping-result');
+
+            // Simulação de verificação de CEP e cálculo de prazo
+            if (cep.match(/^\d{5}-\d{3}$/)) { // Verifica se o CEP está no formato correto
+                var deliveryTime = calculateDeliveryTime(cep);
+                shippingResult.textContent = "Prazo de entrega estimado: " + deliveryTime + " dias úteis.";
+                shippingResult.style.color = "green";
+            } else {
+                shippingResult.textContent = "Por favor, insira um CEP válido.";
+                shippingResult.style.color = "red";
+            }
+        });
+
+        // Função fictícia para calcular o prazo com base no CEP (aqui usamos apenas uma simulação)
+        function calculateDeliveryTime(cep) {
+            // Simulação: baseia-se no primeiro dígito do CEP
+            var firstDigit = parseInt(cep.charAt(0));
+            var deliveryDays;
+
+            if (firstDigit <= 2) {
+                deliveryDays = 3; // Para CEPs iniciados com 0, 1 ou 2
+            } else if (firstDigit <= 5) {
+                deliveryDays = 5; // Para CEPs iniciados com 3, 4 ou 5
+            } else {
+                deliveryDays = 7; // Para demais regiões
+            }
+
+            return deliveryDays;
+        }
+    </script>
+
+</body>
+</html>
